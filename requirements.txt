@@ -6,3 +6,4 @@ llama-index-embeddings-gemini
 streamlit
 llama-index-llms-openai
 llama-index-llms-deepseek
+llama-index-llms-groq

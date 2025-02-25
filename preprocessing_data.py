@@ -42,11 +42,15 @@ def preprocess_data(web_link,is_deep):
         return clean_text
         
     all_links=get_all_links(web_link)
-    all_text = scrape_website(web_link)
+    all_text=[]
+    all_text.append(scrape_website(web_link))
     for link in all_links:
-        all_text += scrape_website(link)
+        all_text.append(scrape_website(link))
+    print(all_links)
+    all_text_content=" ".join(all_text)
     # Clean text by removing extra spaces and newlines
-    clean_text = re.sub(r'\s+', ' ', all_text).strip()
+    clean_text = re.sub(r'\s+', ' ', all_text_content).strip()
+    # print(clean_text)
     return clean_text
         
 
